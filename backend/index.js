@@ -5,14 +5,7 @@ const port = process.env.PORT || 5000;
 const mongoDB = require("./db");
 mongoDB();
 require("dotenv").config();
-app.use((req, res, next) => {
-  res.setHeader("Access-Control_Allow-Origin", process.env.CLIENT_URL);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+
 
 app.use(express.json());
 app.use(cors());
